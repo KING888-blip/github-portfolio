@@ -3,178 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MALIK_PRO2 | Gaming Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>MALIK_PRO2 | Ultra Gaming Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background:#050816;
-    color:#fff;
-    overflow-x:hidden;
+font-family:'Poppins',sans-serif;
+color:#fff;
+background:linear-gradient(-45deg,#050816,#0a0f2c,#001f3f,#050816);
+background-size:400% 400%;
+animation:bgMove 15s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 /* PARTICLES */
 #particles{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-1;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 /* HERO */
 .banner{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .hero-content{
-    max-width:900px;
+max-width:1000px;
+animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 .profile{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    border:4px solid #00f0ff;
-    margin:auto;
-    margin-bottom:25px;
-    background:linear-gradient(45deg,#111,#1a1a1a);
-    box-shadow:0 0 40px #00f0ff;
+width:180px;
+height:180px;
+border-radius:50%;
+border:4px solid #00f0ff;
+margin:auto;
+margin-bottom:30px;
+box-shadow:0 0 50px #00f0ff;
+animation:glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse{
+from{box-shadow:0 0 30px #00f0ff;}
+to{box-shadow:0 0 70px #00f0ff;}
 }
 
 h1{
-    font-size:55px;
-    font-weight:800;
+font-family:'Orbitron',sans-serif;
+font-size:60px;
+font-weight:800;
+letter-spacing:3px;
+color:#00f0ff;
+text-shadow:0 0 25px #00f0ff;
 }
 
-h1 span{
-    color:#00f0ff;
-    text-shadow:0 0 20px #00f0ff;
-}
-
-.hero-content p{
-    margin-top:15px;
-    font-size:18px;
-    opacity:0.9;
-    line-height:1.6;
+.typing{
+margin-top:15px;
+font-size:20px;
+height:30px;
+color:#00ffcc;
 }
 
 .btn{
-    margin-top:30px;
-    padding:15px 40px;
-    background:#00f0ff;
-    border:none;
-    border-radius:40px;
-    color:#000;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.3s;
+margin-top:35px;
+padding:16px 45px;
+background:#00f0ff;
+border:none;
+border-radius:50px;
+color:#000;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
 }
 
 .btn:hover{
-    box-shadow:0 0 30px #00f0ff;
-    transform:translateY(-5px);
+transform:translateY(-6px);
+box-shadow:0 0 35px #00f0ff;
 }
 
 /* SECTION */
 section{
-    padding:80px 10%;
+padding:100px 10%;
 }
 
 .card{
-    background:rgba(20,25,45,0.8);
-    padding:50px;
-    border-radius:25px;
-    box-shadow:0 0 40px rgba(0,240,255,0.15);
-    margin-bottom:40px;
-    backdrop-filter:blur(10px);
+background:rgba(10,15,40,0.8);
+padding:60px;
+border-radius:30px;
+backdrop-filter:blur(15px);
+box-shadow:0 0 60px rgba(0,240,255,0.2);
+animation:fadeUp 2s ease;
 }
 
-h2{
-    color:#00f0ff;
-    margin-bottom:25px;
-    font-size:32px;
-    text-shadow:0 0 15px #00f0ff;
+.card h2{
+font-family:'Orbitron',sans-serif;
+color:#00f0ff;
+margin-bottom:30px;
+font-size:35px;
+text-shadow:0 0 20px #00f0ff;
 }
 
 .card p{
-    line-height:1.9;
-    margin-bottom:20px;
-    font-size:17px;
+line-height:2;
+margin-bottom:25px;
+font-size:18px;
 }
 
 /* MODAL */
 .modal{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    visibility:hidden;
-    transition:0.3s;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+visibility:hidden;
+transition:0.3s;
 }
 
 .modal.active{
-    opacity:1;
-    visibility:visible;
+opacity:1;
+visibility:visible;
 }
 
 .modal-content{
-    background:#111c2e;
-    padding:50px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 0 50px #00f0ff;
-    transform:scale(0.7);
-    transition:0.3s;
+background:#111c2e;
+padding:60px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 60px #00f0ff;
+transform:scale(0.7);
+transition:0.3s;
 }
 
 .modal.active .modal-content{
-    transform:scale(1);
-}
-
-.close-btn{
-    margin-top:20px;
-    padding:12px 30px;
-    background:#00f0ff;
-    border:none;
-    border-radius:25px;
-    font-weight:600;
-    cursor:pointer;
+transform:scale(1);
 }
 
 #discordID{
-    color:#00f0ff;
-    cursor:pointer;
-    font-size:22px;
+color:#00f0ff;
+cursor:pointer;
+font-size:24px;
+margin-top:15px;
 }
 
 #discordID:hover{
-    text-shadow:0 0 20px #00f0ff;
+text-shadow:0 0 25px #00f0ff;
+}
+
+.close-btn{
+margin-top:25px;
+padding:12px 35px;
+background:#00f0ff;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
 }
 
 footer{
-    text-align:center;
-    padding:40px 0;
-    opacity:0.6;
+text-align:center;
+padding:40px;
+opacity:0.6;
 }
 </style>
 </head>
@@ -183,68 +203,56 @@ footer{
 
 <canvas id="particles"></canvas>
 
-<!-- HERO -->
 <div class="banner">
-    <div class="hero-content">
-        <div class="profile"></div>
-        <h1>I'm <span>MALIK_PRO2</span></h1>
-        <p>
-            Minecraft Network Developer • Web Developer • Discord Engineer • Professional Video Editor
-        </p>
-        <p>
-            Executive at Cake MC & Founder of Rampage MC.
-            Building competitive gaming ecosystems with performance, security, and premium digital branding.
-        </p>
-        <button class="btn" onclick="openModal()">View My Work</button>
-    </div>
+<div class="hero-content">
+<div class="profile"></div>
+<h1>MALIK_PRO2</h1>
+<div class="typing" id="typing"></div>
+<button class="btn" onclick="openModal()">View My Work</button>
+</div>
 </div>
 
-<!-- ABOUT -->
 <section>
-    <div class="card">
-        <h2>Who I Am</h2>
-        <p>
-            I’m MALIK_PRO2 — a high-performance Minecraft Network Developer and digital architect
-            focused on creating powerful, competitive, and scalable gaming infrastructures.
-        </p>
-        <p>
-            As Executive at Cake MC, I managed backend systems, anti-cheat calibration,
-            economy balance, TPS stabilization, and performance optimization for
-            competitive Lifesteal environments with high player activity.
-        </p>
-        <p>
-            As Founder of Rampage MC, I engineered the complete network from scratch —
-            including Velocity proxy architecture, cracked-environment security,
-            Discord automation systems, and modern web integration.
-        </p>
-        <p>
-            Beyond development, I am also a Professional Video Editor,
-            creating cinematic server trailers, high-impact PvP edits,
-            promotional gaming content, and engaging social media videos
-            designed to grow communities and elevate brand presence.
-        </p>
-        <p>
-            My expertise includes advanced Minecraft configuration (Paper / Purpur / Velocity),
-            anti-cheat optimization, lag reduction, modern web design,
-            Discord automation ecosystems, and high-energy gaming video production.
-        </p>
-        <p>
-            I don’t just build servers — I build complete gaming brands.
-        </p>
-    </div>
+<div class="card">
+<h2>About Me</h2>
+
+<p>
+I am MALIK_PRO2 — a high-level Minecraft Network Developer, Web Architect, Discord Infrastructure Engineer, and Professional Gaming Video Editor dedicated to building competitive digital ecosystems that dominate the Minecraft scene.
+</p>
+
+<p>
+As Executive at Cake MC, I was responsible for advanced backend architecture, anti-cheat calibration, TPS stabilization, large-scale server optimization, and maintaining high-performance Lifesteal gameplay environments under heavy player load.
+</p>
+
+<p>
+As Founder of Rampage MC, I engineered the entire network from the ground up — building Velocity-based infrastructure, implementing cracked-environment security systems, designing Discord automation frameworks, and integrating modern web platforms to scale the brand professionally.
+</p>
+
+<p>
+My expertise covers Paper and Purpur optimization, plugin engineering, lag elimination, competitive PvP balancing, modern animated web development, automated Discord growth systems, and high-impact gaming video production.
+</p>
+
+<p>
+As a Professional Video Editor, I create cinematic trailers, PvP montages, server promos, and high-energy gaming edits using advanced transitions, sound design, and visual effects tailored to maximize engagement and brand power.
+</p>
+
+<p>
+I don’t just develop servers — I build complete gaming brands powered by performance, design, automation, and visual identity.
+</p>
+
+</div>
 </section>
 
-<!-- MODAL -->
 <div class="modal" id="contactModal">
-    <div class="modal-content">
-        <h2>Contact Me</h2>
-        <p>Click to copy my Discord:</p>
-        <h3 id="discordID" onclick="copyDiscord()">malik_pro2</h3>
-        <p id="copyMessage" style="margin-top:10px; color:#00ffcc; display:none;">
-            ✔ Copied to clipboard!
-        </p>
-        <button class="close-btn" onclick="closeModal()">Close</button>
-    </div>
+<div class="modal-content">
+<h2>Contact Me</h2>
+<p>Click to copy my Discord:</p>
+<h3 id="discordID" onclick="copyDiscord()">malik_pro2</h3>
+<p id="copyMessage" style="margin-top:10px;color:#00ffcc;display:none;">
+✔ Copied to clipboard!
+</p>
+<button class="close-btn" onclick="closeModal()">Close</button>
+</div>
 </div>
 
 <footer>
@@ -252,80 +260,107 @@ footer{
 </footer>
 
 <script>
-function openModal(){
-    document.getElementById("contactModal").classList.add("active");
-}
-
-function closeModal(){
-    document.getElementById("contactModal").classList.remove("active");
-}
-
+function openModal(){document.getElementById("contactModal").classList.add("active");}
+function closeModal(){document.getElementById("contactModal").classList.remove("active");}
 function copyDiscord(){
-    navigator.clipboard.writeText("malik_pro2");
-    const message = document.getElementById("copyMessage");
-    message.style.display = "block";
-    setTimeout(() => {
-        message.style.display = "none";
-    }, 2000);
+navigator.clipboard.writeText("malik_pro2");
+const msg=document.getElementById("copyMessage");
+msg.style.display="block";
+setTimeout(()=>{msg.style.display="none";},2000);
 }
 
-/* PARTICLES */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+/* TYPING EFFECT */
+const text="Minecraft Developer • Web Developer • Discord Engineer • Video Editor";
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,50);
+}
+}
+type();
 
-let particlesArray = [];
+/* HEAVY PARTICLES WITH LINES */
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+const mouse={x:null,y:null,radius:120};
+
+window.addEventListener("mousemove",function(e){
+mouse.x=e.x;
+mouse.y=e.y;
+});
 
 class Particle{
-    constructor(){
-        this.x = Math.random()*canvas.width;
-        this.y = Math.random()*canvas.height;
-        this.size = Math.random()*3+1;
-        this.speedX = Math.random()*1-0.5;
-        this.speedY = Math.random()*1-0.5;
-    }
-    update(){
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if(this.x>canvas.width) this.x=0;
-        if(this.x<0) this.x=canvas.width;
-        if(this.y>canvas.height) this.y=0;
-        if(this.y<0) this.y=canvas.height;
-    }
-    draw(){
-        ctx.fillStyle="#00f0ff";
-        ctx.shadowBlur=15;
-        ctx.shadowColor="#00f0ff";
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-        ctx.fill();
-    }
+constructor(){
+this.x=Math.random()*canvas.width;
+this.y=Math.random()*canvas.height;
+this.size=Math.random()*3+1;
+this.speedX=Math.random()*1-0.5;
+this.speedY=Math.random()*1-0.5;
+}
+update(){
+this.x+=this.speedX;
+this.y+=this.speedY;
+if(this.x<0||this.x>canvas.width)this.speedX*=-1;
+if(this.y<0||this.y>canvas.height)this.speedY*=-1;
+}
+draw(){
+ctx.fillStyle="#00f0ff";
+ctx.shadowBlur=15;
+ctx.shadowColor="#00f0ff";
+ctx.beginPath();
+ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ctx.fill();
+}
 }
 
 function init(){
-    particlesArray=[];
-    for(let i=0;i<150;i++){
-        particlesArray.push(new Particle());
-    }
+particles=[];
+for(let i=0;i<250;i++){
+particles.push(new Particle());
+}
+}
+
+function connect(){
+for(let a=0;a<particles.length;a++){
+for(let b=a;b<particles.length;b++){
+let dx=particles[a].x-particles[b].x;
+let dy=particles[a].y-particles[b].y;
+let distance=dx*dx+dy*dy;
+if(distance<9000){
+ctx.strokeStyle="rgba(0,240,255,0.1)";
+ctx.lineWidth=1;
+ctx.beginPath();
+ctx.moveTo(particles[a].x,particles[a].y);
+ctx.lineTo(particles[b].x,particles[b].y);
+ctx.stroke();
+}
+}
+}
 }
 
 function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particlesArray.forEach(p=>{
-        p.update();
-        p.draw();
-    });
-    requestAnimationFrame(animate);
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.update();
+p.draw();
+});
+connect();
+requestAnimationFrame(animate);
 }
 
 init();
 animate();
 
 window.addEventListener("resize",function(){
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-    init();
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+init();
 });
 </script>
 
