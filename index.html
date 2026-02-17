@@ -17,12 +17,13 @@
 body{
     background:#0a0f1c;
     color:#fff;
+    overflow-x:hidden;
 }
 
-/* HERO */
+/* BANNER */
 .banner{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
     url('https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=1950&q=80');
     background-size:cover;
     background-position:center;
@@ -30,10 +31,11 @@ body{
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:20px;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:900px;
 }
 
 .profile{
@@ -47,8 +49,20 @@ body{
     box-shadow:0 0 40px #00aaff;
 }
 
+h1{
+    font-size:50px;
+    font-weight:800;
+}
+
 h1 span{
     color:#00aaff;
+}
+
+.hero-content p{
+    margin-top:15px;
+    font-size:18px;
+    opacity:0.9;
+    line-height:1.6;
 }
 
 .btn{
@@ -62,11 +76,37 @@ h1 span{
     font-weight:600;
     cursor:pointer;
     transition:0.3s;
+    border:none;
 }
 
 .btn:hover{
     box-shadow:0 0 25px #00aaff;
     transform:translateY(-4px);
+}
+
+/* SECTION */
+section{
+    padding:80px 10%;
+}
+
+.card{
+    background:#111c2e;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 30px rgba(0,170,255,0.15);
+    margin-bottom:40px;
+}
+
+h2{
+    color:#00aaff;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.card p{
+    line-height:1.8;
+    margin-bottom:15px;
+    opacity:0.9;
 }
 
 /* MODAL */
@@ -76,7 +116,7 @@ h1 span{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.8);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -90,9 +130,18 @@ h1 span{
     padding:40px;
     border-radius:20px;
     text-align:center;
-    box-shadow:0 0 30px #00aaff;
+    box-shadow:0 0 40px #00aaff;
     transform:scale(0.7);
     transition:0.3s;
+}
+
+.modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal.active .modal-content{
+    transform:scale(1);
 }
 
 .modal h2{
@@ -110,18 +159,13 @@ h1 span{
     cursor:pointer;
 }
 
-.modal.active{
-    opacity:1;
-    visibility:visible;
-}
-
-.modal.active .modal-content{
-    transform:scale(1);
+#discordID:hover{
+    text-shadow:0 0 15px #00aaff;
 }
 
 footer{
     text-align:center;
-    padding:30px;
+    padding:40px 0;
     opacity:0.6;
 }
 </style>
@@ -129,21 +173,67 @@ footer{
 
 <body>
 
+<!-- HERO -->
 <div class="banner">
     <div class="hero-content">
         <div class="profile"></div>
         <h1>Hi, I'm <span>MALIK_PRO2</span></h1>
         <p>Minecraft Developer | Web Developer | Discord Developer</p>
+        <p>
+            Executive at Cake MC & Founder of Rampage MC.
+            Specialized in competitive Lifesteal networks, performance optimization,
+            and premium digital infrastructure.
+        </p>
         <button class="btn" onclick="openModal()">View My Work</button>
     </div>
 </div>
+
+<!-- ABOUT -->
+<section>
+    <div class="card">
+        <h2>About Me</h2>
+        <p>
+            I am MALIK_PRO2, an experienced Minecraft Network Developer with strong expertise in 
+            server optimization, infrastructure design, and scalable competitive ecosystems.
+        </p>
+        <p>
+            As Executive at Cake MC, I managed technical operations, anti-cheat systems,
+            economy balancing, plugin configuration, and ensured stable TPS for large player bases.
+        </p>
+        <p>
+            As Founder of Rampage MC, I built the network from scratch — designing Velocity architecture,
+            security layers for cracked environments, Discord automation systems,
+            and full web integration.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Core Expertise</h2>
+        <p>
+            • Minecraft Server Development (Paper / Purpur / Velocity)<br>
+            • Lifesteal & SMP Competitive Setup<br>
+            • Web Development (Modern Animated Websites)<br>
+            • Discord Bot & Automation Systems<br>
+            • Lag Optimization & Security Hardening
+        </p>
+    </div>
+</section>
 
 <!-- MODAL -->
 <div class="modal" id="contactModal">
     <div class="modal-content">
         <h2>Contact Me</h2>
-        <p>📩 Discord ID:</p>
-        <h3 style="color:#00aaff;">malik_pro2</h3>
+        <p>📩 Click to copy my Discord:</p>
+
+        <h3 id="discordID" onclick="copyDiscord()" 
+            style="color:#00aaff; cursor:pointer;">
+            malik_pro2
+        </h3>
+
+        <p id="copyMessage" style="margin-top:10px; color:#00ffcc; display:none;">
+            ✔ Copied to clipboard!
+        </p>
+
         <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
 </div>
@@ -159,6 +249,18 @@ function openModal(){
 
 function closeModal(){
     document.getElementById("contactModal").classList.remove("active");
+}
+
+function copyDiscord(){
+    const discordText = "malik_pro2";
+    navigator.clipboard.writeText(discordText);
+
+    const message = document.getElementById("copyMessage");
+    message.style.display = "block";
+
+    setTimeout(() => {
+        message.style.display = "none";
+    }, 2000);
 }
 </script>
 
