@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MALIK_PRO2 | Portfolio</title>
+<title>MALIK_PRO2 | Gaming Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -15,18 +15,24 @@
 }
 
 body{
-    background:#0a0f1c;
+    background:#050816;
     color:#fff;
     overflow-x:hidden;
 }
 
-/* BANNER */
+/* PARTICLES */
+#particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* HERO */
 .banner{
     height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-    url('https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=1950&q=80');
-    background-size:cover;
-    background-position:center;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -39,23 +45,24 @@ body{
 }
 
 .profile{
-    width:160px;
-    height:160px;
+    width:170px;
+    height:170px;
     border-radius:50%;
-    border:4px solid #00aaff;
+    border:4px solid #00f0ff;
     margin:auto;
     margin-bottom:25px;
-    background:#111;
-    box-shadow:0 0 40px #00aaff;
+    background:linear-gradient(45deg,#111,#1a1a1a);
+    box-shadow:0 0 40px #00f0ff;
 }
 
 h1{
-    font-size:50px;
+    font-size:55px;
     font-weight:800;
 }
 
 h1 span{
-    color:#00aaff;
+    color:#00f0ff;
+    text-shadow:0 0 20px #00f0ff;
 }
 
 .hero-content p{
@@ -66,22 +73,20 @@ h1 span{
 }
 
 .btn{
-    display:inline-block;
     margin-top:30px;
-    padding:14px 35px;
-    background:#00aaff;
-    border-radius:30px;
-    text-decoration:none;
-    color:white;
-    font-weight:600;
+    padding:15px 40px;
+    background:#00f0ff;
+    border:none;
+    border-radius:40px;
+    color:#000;
+    font-weight:700;
     cursor:pointer;
     transition:0.3s;
-    border:none;
 }
 
 .btn:hover{
-    box-shadow:0 0 25px #00aaff;
-    transform:translateY(-4px);
+    box-shadow:0 0 30px #00f0ff;
+    transform:translateY(-5px);
 }
 
 /* SECTION */
@@ -90,23 +95,25 @@ section{
 }
 
 .card{
-    background:#111c2e;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 0 30px rgba(0,170,255,0.15);
+    background:rgba(20,25,45,0.8);
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(0,240,255,0.15);
     margin-bottom:40px;
+    backdrop-filter:blur(10px);
 }
 
 h2{
-    color:#00aaff;
-    margin-bottom:20px;
-    font-size:30px;
+    color:#00f0ff;
+    margin-bottom:25px;
+    font-size:32px;
+    text-shadow:0 0 15px #00f0ff;
 }
 
 .card p{
-    line-height:1.8;
-    margin-bottom:15px;
-    opacity:0.9;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:17px;
 }
 
 /* MODAL */
@@ -116,7 +123,7 @@ h2{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.85);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -125,42 +132,43 @@ h2{
     transition:0.3s;
 }
 
-.modal-content{
-    background:#111c2e;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 0 40px #00aaff;
-    transform:scale(0.7);
-    transition:0.3s;
-}
-
 .modal.active{
     opacity:1;
     visibility:visible;
+}
+
+.modal-content{
+    background:#111c2e;
+    padding:50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 0 50px #00f0ff;
+    transform:scale(0.7);
+    transition:0.3s;
 }
 
 .modal.active .modal-content{
     transform:scale(1);
 }
 
-.modal h2{
-    color:#00aaff;
-    margin-bottom:15px;
-}
-
 .close-btn{
     margin-top:20px;
-    padding:10px 25px;
-    background:#00aaff;
+    padding:12px 30px;
+    background:#00f0ff;
     border:none;
-    border-radius:20px;
-    color:white;
+    border-radius:25px;
+    font-weight:600;
     cursor:pointer;
 }
 
+#discordID{
+    color:#00f0ff;
+    cursor:pointer;
+    font-size:22px;
+}
+
 #discordID:hover{
-    text-shadow:0 0 15px #00aaff;
+    text-shadow:0 0 20px #00f0ff;
 }
 
 footer{
@@ -173,16 +181,19 @@ footer{
 
 <body>
 
+<canvas id="particles"></canvas>
+
 <!-- HERO -->
 <div class="banner">
     <div class="hero-content">
         <div class="profile"></div>
-        <h1>Hi, I'm <span>MALIK_PRO2</span></h1>
-        <p>Minecraft Developer | Web Developer | Discord Developer</p>
+        <h1>I'm <span>MALIK_PRO2</span></h1>
+        <p>
+            Minecraft Network Developer • Web Developer • Discord Engineer • Professional Video Editor
+        </p>
         <p>
             Executive at Cake MC & Founder of Rampage MC.
-            Specialized in competitive Lifesteal networks, performance optimization,
-            and premium digital infrastructure.
+            Building competitive gaming ecosystems with performance, security, and premium digital branding.
         </p>
         <button class="btn" onclick="openModal()">View My Work</button>
     </div>
@@ -191,30 +202,34 @@ footer{
 <!-- ABOUT -->
 <section>
     <div class="card">
-        <h2>About Me</h2>
+        <h2>Who I Am</h2>
         <p>
-            I am MALIK_PRO2, an experienced Minecraft Network Developer with strong expertise in 
-            server optimization, infrastructure design, and scalable competitive ecosystems.
+            I’m MALIK_PRO2 — a high-performance Minecraft Network Developer and digital architect
+            focused on creating powerful, competitive, and scalable gaming infrastructures.
         </p>
         <p>
-            As Executive at Cake MC, I managed technical operations, anti-cheat systems,
-            economy balancing, plugin configuration, and ensured stable TPS for large player bases.
+            As Executive at Cake MC, I managed backend systems, anti-cheat calibration,
+            economy balance, TPS stabilization, and performance optimization for
+            competitive Lifesteal environments with high player activity.
         </p>
         <p>
-            As Founder of Rampage MC, I built the network from scratch — designing Velocity architecture,
-            security layers for cracked environments, Discord automation systems,
-            and full web integration.
+            As Founder of Rampage MC, I engineered the complete network from scratch —
+            including Velocity proxy architecture, cracked-environment security,
+            Discord automation systems, and modern web integration.
         </p>
-    </div>
-
-    <div class="card">
-        <h2>Core Expertise</h2>
         <p>
-            • Minecraft Server Development (Paper / Purpur / Velocity)<br>
-            • Lifesteal & SMP Competitive Setup<br>
-            • Web Development (Modern Animated Websites)<br>
-            • Discord Bot & Automation Systems<br>
-            • Lag Optimization & Security Hardening
+            Beyond development, I am also a Professional Video Editor,
+            creating cinematic server trailers, high-impact PvP edits,
+            promotional gaming content, and engaging social media videos
+            designed to grow communities and elevate brand presence.
+        </p>
+        <p>
+            My expertise includes advanced Minecraft configuration (Paper / Purpur / Velocity),
+            anti-cheat optimization, lag reduction, modern web design,
+            Discord automation ecosystems, and high-energy gaming video production.
+        </p>
+        <p>
+            I don’t just build servers — I build complete gaming brands.
         </p>
     </div>
 </section>
@@ -223,17 +238,11 @@ footer{
 <div class="modal" id="contactModal">
     <div class="modal-content">
         <h2>Contact Me</h2>
-        <p>📩 Click to copy my Discord:</p>
-
-        <h3 id="discordID" onclick="copyDiscord()" 
-            style="color:#00aaff; cursor:pointer;">
-            malik_pro2
-        </h3>
-
+        <p>Click to copy my Discord:</p>
+        <h3 id="discordID" onclick="copyDiscord()">malik_pro2</h3>
         <p id="copyMessage" style="margin-top:10px; color:#00ffcc; display:none;">
             ✔ Copied to clipboard!
         </p>
-
         <button class="close-btn" onclick="closeModal()">Close</button>
     </div>
 </div>
@@ -252,16 +261,72 @@ function closeModal(){
 }
 
 function copyDiscord(){
-    const discordText = "malik_pro2";
-    navigator.clipboard.writeText(discordText);
-
+    navigator.clipboard.writeText("malik_pro2");
     const message = document.getElementById("copyMessage");
     message.style.display = "block";
-
     setTimeout(() => {
         message.style.display = "none";
     }, 2000);
 }
+
+/* PARTICLES */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particlesArray = [];
+
+class Particle{
+    constructor(){
+        this.x = Math.random()*canvas.width;
+        this.y = Math.random()*canvas.height;
+        this.size = Math.random()*3+1;
+        this.speedX = Math.random()*1-0.5;
+        this.speedY = Math.random()*1-0.5;
+    }
+    update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x>canvas.width) this.x=0;
+        if(this.x<0) this.x=canvas.width;
+        if(this.y>canvas.height) this.y=0;
+        if(this.y<0) this.y=canvas.height;
+    }
+    draw(){
+        ctx.fillStyle="#00f0ff";
+        ctx.shadowBlur=15;
+        ctx.shadowColor="#00f0ff";
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+    }
+}
+
+function init(){
+    particlesArray=[];
+    for(let i=0;i<150;i++){
+        particlesArray.push(new Particle());
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particlesArray.forEach(p=>{
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+window.addEventListener("resize",function(){
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    init();
+});
 </script>
 
 </body>
